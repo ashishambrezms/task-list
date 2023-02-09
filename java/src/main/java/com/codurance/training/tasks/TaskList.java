@@ -14,6 +14,9 @@ import java.util.Map;
 
 public final class TaskList implements Runnable {
     private static final String QUIT = "quit";
+    public static final String PROJECT = "project";
+    public static final String DATE = "date";
+    public static final String DEADLINE = "deadline";
 
     private final Map<String, List<Task>> tasks = new LinkedHashMap<>();
     private final BufferedReader in;
@@ -61,9 +64,18 @@ public final class TaskList implements Runnable {
     private void execute(String commandLine) throws ParseException {
         String[] commandRest = commandLine.split(" ", 2);
         String command = commandRest[0];
+        if(command.equals("view")){
+            command = command + " " + commandRest[1];
+        }
         switch (command) {
-            case "show":
-                viewService.show();
+            case "view by project":
+                viewService.show(PROJECT);
+                break;
+            case "view by date":
+                viewService.show(DATE);
+                break;
+            case "view by deadline":
+                viewService.show(DEADLINE);
                 break;
             case "add":
                 addService.add(commandRest[1]);
@@ -79,6 +91,9 @@ public final class TaskList implements Runnable {
                 break;
             case "today":
                 viewService.listTasksDueToday();
+                break;
+            case "delete":
+                updateService.delete(commandRest[1]);
                 break;
             case "help":
                 TaskListUtils.help(out);

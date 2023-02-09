@@ -34,16 +34,16 @@ public class TaskListUpdateServiceImpl implements TaskListUpdateService {
 
     @Override
     public void setDone(String idString, Boolean done) {
-        int id = Integer.parseInt(idString);
+        //int id = Integer.parseInt(idString);
         for (Map.Entry<String, List<Task>> project : tasks.entrySet()) {
             for (Task task : project.getValue()) {
-                if (task.getId() == id) {
+                if (task.getId().equals(idString)) {
                     task.setDone(done);
                     return;
                 }
             }
         }
-        out.printf("Could not find a task with an ID of %d.", id);
+        out.printf("Could not find a task with an ID of %s.", idString);
         out.println();
     }
 
@@ -53,18 +53,31 @@ public class TaskListUpdateServiceImpl implements TaskListUpdateService {
         String[] subcommandRest = commandLine.split(" ", 2);
         String idString = subcommandRest[0];
         String deadline = subcommandRest[1];
-        int id = Integer.parseInt(idString);
+
         for (Map.Entry<String, List<Task>> project : tasks.entrySet()) {
             for (Task task : project.getValue()) {
-                if (task.getId() == id) {
+                if (task.getId().equals(idString)) {
                     Date newDate = new SimpleDateFormat("dd/MM/yyyy").parse(deadline);
                     task.setDeadline(newDate);
-                    System.out.println(newDate);
                     return;
                 }
             }
         }
-        out.printf("Could not find a task with an ID of %d.", id);
+        out.printf("Could not find a task with an ID of %s.", idString);
+        out.println();
+    }
+
+    @Override
+    public void delete(String idString) {
+        for(Map.Entry<String, List<Task>> project : tasks.entrySet()) {
+            for(Task task : project.getValue()){
+                if(task.getId().equals(idString)){
+                    project.getValue().remove(task);
+                    return;
+                }
+            }
+        }
+        out.printf("Could not find a task with an ID of %s.", idString);
         out.println();
     }
 }

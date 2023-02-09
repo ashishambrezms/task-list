@@ -1,6 +1,7 @@
 package com.codurance.training.tasks.service;
 
 import com.codurance.training.tasks.Task;
+import com.codurance.training.tasks.utils.TaskListUtils;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
@@ -40,14 +41,24 @@ public class TaskListAddServiceImpl implements TaskListAddService {
     }
 
     @Override
-    public void addTask(String project, String description) {
+    public void addTask(String project, String idDescription) {
         List<Task> projectTasks = tasks.get(project);
         if (projectTasks == null) {
             out.printf("Could not find a project with the name \"%s\".", project);
             out.println();
             return;
         }
-        projectTasks.add(new Task(nextId(), description, false));
+        String[] taskDetails = idDescription.split(" ", 2);
+        String id = taskDetails[0];
+        String description = taskDetails[1];
+        if(TaskListUtils.isValidId(id)){
+            projectTasks.add(new Task(id, description, false));
+        } else {
+            out.printf("Invalid ID. ID should not have spaces or special characters.");
+            out.println();
+            return;
+        }
+
     }
 
     private long nextId() {

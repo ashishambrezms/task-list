@@ -8,4 +8,6 @@ public interface TaskListUpdateService extends TaskListService {
     void uncheck(String idString);
     void setDone(String idString, Boolean done);
     void setDeadline(String commandLine) throws ParseException;
+
+    void delete(String idString);
 }

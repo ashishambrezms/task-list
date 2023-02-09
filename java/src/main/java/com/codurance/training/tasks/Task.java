@@ -4,19 +4,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public final class Task {
-    private final Long id;
+    private final String id;
     private final String description;
     private Boolean done;
+    private Date createdOn;
     private Date deadline;
 
-    public Task(long id, String description, boolean done) {
+    public Task(String id, String description, boolean done) {
         this.id = id;
         this.description = description;
         this.done = done;
+        this.createdOn = new Date();
         this.deadline = new Date();
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -30,6 +32,14 @@ public final class Task {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
     }
 
     public Date getDeadline() {
