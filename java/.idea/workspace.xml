@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c549604a-15ea-42c5-a58b-08396c5cdc02" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/TaskList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListAddServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListAddServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListUpdateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListUpdateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListUpdateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListUpdateServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListViewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListViewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListViewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/service/TaskListViewServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/utils/TaskListUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks/utils/TaskListUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/codurance/training/tasks/ApplicationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +67,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/asha/training/solid-kata/task-list/java/src/main/java/com/codurance/training/tasks",
+    "last_opened_file_path": "/home/asha/training/solid-kata/task-list/java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -89,7 +82,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/codurance/training/tasks" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TaskList">
+  <component name="RunManager" selected="JUnit.ApplicationTest">
     <configuration name="TaskList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.codurance.training.tasks.TaskList" />
       <module name="tasks" />
@@ -144,8 +137,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TaskList" />
         <item itemvalue="JUnit.ApplicationTest" />
+        <item itemvalue="Application.TaskList" />
         <item itemvalue="Application.TaskListUtils" />
       </list>
     </recent_temporary>
