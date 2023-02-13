@@ -53,46 +53,46 @@ public final class ApplicationTest {
 
     @Test(timeout = 1000) public void
     it_works() throws IOException {
-        execute("show");
+        execute("view by project");
 
         execute("add project secrets");
-        execute("add task secrets Eat more donuts.");
-        execute("add task secrets Destroy all humans.");
+        execute("add task secrets ID1 Eat more donuts.");
+        execute("add task secrets ID2 Destroy all humans.");
 
-        execute("show");
+        execute("view by project");
         readLines(
             "secrets",
-            "    [ ] 1: Eat more donuts.",
-            "    [ ] 2: Destroy all humans.",
+            "    [ ] ID1: Eat more donuts.",
+            "    [ ] ID2: Destroy all humans.",
             ""
         );
 
         execute("add project training");
-        execute("add task training Four Elements of Simple Design");
-        execute("add task training SOLID");
-        execute("add task training Coupling and Cohesion");
-        execute("add task training Primitive Obsession");
-        execute("add task training Outside-In TDD");
-        execute("add task training Interaction-Driven Design");
+        execute("add task training ID3 Four Elements of Simple Design");
+        execute("add task training ID4 SOLID");
+        execute("add task training ID5 Coupling and Cohesion");
+        execute("add task training ID6 Primitive Obsession");
+        execute("add task training ID7 Outside-In TDD");
+        execute("add task training ID8 Interaction-Driven Design");
 
-        execute("check 1");
-        execute("check 3");
-        execute("check 5");
-        execute("check 6");
+        execute("check ID1");
+        execute("check ID3");
+        execute("check ID5");
+        execute("check ID6");
 
-        execute("show");
+        execute("view by project");
         readLines(
                 "secrets",
-                "    [x] 1: Eat more donuts.",
-                "    [ ] 2: Destroy all humans.",
+                "    [x] ID1: Eat more donuts.",
+                "    [ ] ID2: Destroy all humans.",
                 "",
                 "training",
-                "    [x] 3: Four Elements of Simple Design",
-                "    [ ] 4: SOLID",
-                "    [x] 5: Coupling and Cohesion",
-                "    [x] 6: Primitive Obsession",
-                "    [ ] 7: Outside-In TDD",
-                "    [ ] 8: Interaction-Driven Design",
+                "    [x] ID3: Four Elements of Simple Design",
+                "    [ ] ID4: SOLID",
+                "    [x] ID5: Coupling and Cohesion",
+                "    [x] ID6: Primitive Obsession",
+                "    [ ] ID7: Outside-In TDD",
+                "    [ ] ID8: Interaction-Driven Design",
                 ""
         );
 
